@@ -1,0 +1,157 @@
+@font-face{
+
+  font-family: 'MuseoSansCyrl';
+
+  src: url('../fonts/MuseoSansCyrl.otf');
+
+  font-weight: normal;
+
+  font-style: normal;
+
+}
+
+@font-face{
+
+  font-family: 'MuseoSansCyrl';
+
+  src: url('../fonts/museo_sans_cyrl_500.ttf');
+
+  font-weight: bold;
+
+  font-style: normal;
+
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+a {
+  color: #ff4f36;
+}
+
+p {
+  font-size: 14px;
+}
+//HEADER
+.top__news-menu {
+  background: #ffe4e6;
+  padding: 10px 0;
+  font-family: 'MuseoSansCyrl';
+}
+
+.top__short-news{
+  float: left;
+}
+
+.top__auth{
+  text-align: right;
+}
+
+.auth{
+  display: inline-block;
+}
+
+.top__auth p {
+  display: inline-block;
+  margin: 0;
+}
+
+.header__menu {
+  width: 40%;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  align-self: center;
+  cursor: pointer;
+  text-align: center;
+}
+
+.header__menu ul {
+  display: flex;
+  padding: 0;
+}
+
+.header__menu ul li {
+  flex: 1 1 20%;
+  list-style-type: none;
+  position: relative;
+  transition-property: all;
+  transition-duration: .3s;
+  transition-timing-function: ease;
+}
+.header__menu ul li:after{
+  display: inline-block;
+  content: "";
+  height: 1px;
+  width: 30px;
+  background: transparent;
+  position: absolute;
+  left: 50%;
+  margin-left: -15px;
+  bottom: 0;
+  margin-bottom: -5px;
+  transition-property: all;
+  transition-duration: .3s;
+  transition-timing-function: ease;
+}
+
+.header__menu ul li:hover{
+  color: #ff4f36;
+  &:after{
+    background: #ff4f36;
+  }
+}
+
+
+
+
+.header__logo{
+  width: 21%;
+  padding: 0 25px;
+}
+
+.header__wrap{
+  display: flex;
+}
+
+.header__menu-second {
+  text-align: center;
+}
+
+.logo-main__img {
+  background: url(../images/sprite.png) 0 0;
+  width: 67px;
+  height: 68px;
+  float: left;
+}
+
+.header__main-block {
+  padding: 24px 0;
+}
+
+.logo-main__text p {
+  margin: 0;
+}
+.logo__sub-text{
+  font-family: 'MuseoSansCyrl';
+  margin-left: 78px !important;
+}
+
+.logo__main-text{
+  font-size: 24px;
+}
+
+
+//HOME
+
+.home__banners{
+  background: #ebeae5;
+}
+
+.home__main-banner{
+  height: 366px;
+  width: 748px;
+}
