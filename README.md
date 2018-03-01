@@ -1,2 +1,1 @@
-# builder
-builder(sass sprite)
+Empty project (Flowers)
