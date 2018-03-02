@@ -37,7 +37,7 @@ gulp.task('sprite', function() {
 
 // Clean
 gulp.task('clean', function() {
-    return del(['build/css', 'build/images']);
+    return del(['build/css', 'build/images/sprite']);
 });
 
 // Default task
