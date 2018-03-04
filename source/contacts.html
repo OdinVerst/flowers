@@ -1,0 +1,39 @@
+@@include('../source/common/header.html')
+<div class="container">
+    <div class="tit__page">
+        <h1 class="tit__page-h1">Контакты</h1>
+        <ul class="breadcrumbs">
+            <li><a class="breadcrumbs-item" href="#">#BEZROZ.ru</a></li>
+            <li><a class="breadcrumbs-item" href="#">Контакты</a></li>
+        </ul>
+    </div>
+    <div class="contact__page">
+        <div class="contact__map">
+            <div id="map"></div>
+        </div>
+        <div class="contact__info">
+            <p class="contact__info-b">Приходите в гости</p>
+            <p class="contact__text">Головной офис и склад компании #BEZROZ расположены по адресу:</p>
+
+            <p class="contact__info-adr">г. Казань, ул. Кремлевская,<br>
+                д. 25, офис 77</p>
+            <p class="contact__info-b">Позвоните нам</p>
+                <p class="contact__text">Мы на связи 24 часа в сутки, 7 дней в неделю</p>
+            <p class="contact__info-phone">8 800 555 77 33</p><p class="contact__info-phonetext"> (многоканальный)</p>
+        </div>
+    </div>
+
+    <script>
+        function initMap() {
+            // Create a map object and specify the DOM element for display.
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKyB0bHRcvNNzKF6Mo0tN2-DBoM9rX7Hw&callback=initMap"
+            async defer></script>
+</div>
+@@include('../source/common/footer.html')
