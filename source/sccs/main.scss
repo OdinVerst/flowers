@@ -300,6 +300,63 @@ $translateX: 0;
 .home__main-banner{
   height: 366px;
   width: 748px;
+  position: relative;
+}
+
+.home__main-banner img{
+  position: absolute;
+  left: -44px;
+}
+
+.text__bahher{
+  width: 50%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 50%;
+  margin-top: -155px;
+}
+
+.title__banner-sub{
+  margin: 0;
+  font-size: 24px !important;
+  position: absolute;
+  left: 24px;
+  top: 20px;
+}
+
+.home__banners{
+  margin-bottom: 30px;
+}
+
+.home__banners:last-child{
+  margin-bottom: 0;
+}
+
+.home__banners{
+  position: relative;
+}
+
+.title__banner{
+  font-size: 38px;
+  font-family: "Cambria Math";
+}
+
+.sub-text__banner{
+  width: 290px;
+  font-size: 14px;
+  color: #ff4f36;
+  font-family: "Cambria Math";
+  margin: 0 auto;
+}
+
+.valut__banner{
+  margin: 0;
+  font-family: "Cambria Math";
+}
+
+.price__banner{
+  margin-top: 30px !important;
 }
 
 .banners-block__align{
@@ -1074,5 +1131,33 @@ $translateX: 0;
 @media screen and (max-width: 494px) {
   .bottom__content-wrap{
     display: block;
+  }
+}
+
+
+//ADAPTIVE BANNERS
+@media screen and (max-width: 1140px) {
+  .banners-block__align{
+    display: block;
+  }
+
+  .home__main-banner{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .home__coll-twobanners{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: 35px auto 0;
+  }
+
+  .home__coll-twobanners .home__banners{
+    height: 100%;
+
+  }
+
+  .home__coll-twobanners img{
+    width: 100%;
   }
 }

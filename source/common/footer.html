@@ -7,7 +7,7 @@
             <div class="form__text">
                 <p class="form__title">Хотите поздравить человека, но лично присутствовать нет возможности?</p>
                 <div class="form__input">
-                    <input class="input-tel" type="tel">
+                    <input class="input-tel" type="tel" id="tel" onkeyup="javascript:mask('zipCode', '+7(000)000-00-00', event);" value="+7(___)___-____">
                     <button class="btn__send">Отправить</button>
                 </div>
             </div>
@@ -54,6 +54,39 @@
     <div class="footer__line"></div>
     <div class="footer__corp">2018 © #Bezroz Все права защищены</div>
 </footer>
+<script>
+    window.addEventListener("DOMContentLoaded", function() {
+        function setCursorPosition(pos, elem) {
+            elem.focus();
+            if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+            else if (elem.createTextRange) {
+                var range = elem.createTextRange();
+                range.collapse(true);
+                range.moveEnd("character", pos);
+                range.moveStart("character", pos);
+                range.select()
+            }
+        }
+
+        function mask(event) {
+            var matrix = "+7 (___) ___ ____",
+                i = 0,
+                def = matrix.replace(/\D/g, ""),
+                val = this.value.replace(/\D/g, "");
+            if (def.length >= val.length) val = def;
+            this.value = matrix.replace(/./g, function(a) {
+                return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a
+            });
+            if (event.type == "blur") {
+                if (this.value.length == 2) this.value = ""
+            } else setCursorPosition(this.value.length, this)
+        };
+        var input = document.querySelector("#tel");
+        input.addEventListener("input", mask, false);
+        input.addEventListener("focus", mask, false);
+        input.addEventListener("blur", mask, false);
+    });
+</script>
 
 </body>
 </html>
