@@ -1,0 +1,91 @@
+@@include('../source/common/header.html')
+<div class="zakaz__service-right">
+    <a id="usluga_pop" class="buy" href="javascript:void(0);">В корзину</a>
+</div>
+<div class="bg__popup-form" style="display: none">
+    <div class="popup__form">
+        <div class="first__line-popup">
+            <p class="name__usluga-popup">Оформление свадеб</p>
+            <div class="close__popup"><img src="/images/close_popup.png"></div>
+        </div>
+        <div class="form__body">
+            <div class="name__form-popup">
+                <form action="">
+                    <label class="form__item-popup">Имя:
+                        <input type="text" onkeyup="check()" value="" id="name" required></label>
+                    <label class="form__item-popup">Телефон:
+                        <input type="tel" value="" id="tel" onkeyup="check();" placeholder="+7 (___) ___ - ____" ></label>
+                    <label class="form__item-popup" >Email:
+                        <input type="email" onkeyup="check()"  value="" id="email" required></label>
+                    <label class="form__item-popup">Комментарий:
+                        <textarea></textarea></label>
+                    <input class="btn__send popup__btn" type="submit" disabled>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+
+        $("#usluga_pop").click(function () {
+            $('.bg__popup-form').fadeIn(300);
+            var iddiv = $(this).attr("iddiv");
+            $('#' + iddiv).fadeIn(300);
+            return false;
+        });
+        $(".close__popup").click(function () {
+            var iddiv = $(".bg__popup-form").attr('opendiv');
+            $('.bg__popup-form').fadeOut(300);
+
+        });
+        $(this).keydown(function (eventObject) {
+            if (eventObject.which == 27)
+                $('.bg__popup-form').fadeOut(300);
+        });
+
+    });
+</script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('input#email').unbind().blur(function () {
+            var id = $(this).attr('id');
+            var val = $(this).val();
+            var rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+            if (rv_email.test(val)) {
+                $(this).addClass('not_error');
+                $(this).next('.error-box').text('Принято')
+                    .css('color', 'green')
+                    .animate({'paddingLeft': '10px'}, 400)
+                    .animate({'paddingLeft': '5px'}, 400);
+            }
+            else {
+                $(this).removeClass('not_error').addClass('error');
+                $(this).next('.error-box').html('поле "Email" обязательно для заполнения<br>, поле должно содержать правильный email-адрес<br>')
+                    .css('color', 'red')
+                    .animate({'paddingLeft': '10px'}, 400)
+                    .animate({'paddingLeft': '5px'}, 400);
+            }
+        });
+
+    });
+
+</script>
+<script>
+    function check() {
+        var checkValTest = $('input').filter('[required]:visible');
+        var arrTest = [];
+        for(var i = 0; i<checkValTest.length; i++){
+             arrTest[i] = checkValTest[i].value;
+         }
+        if(arrTest.indexOf('') != -1){
+            $('.btn__send').prop( "disabled", true );
+        }else $('.btn__send').prop( "disabled", false );
+    }
+</script>
+@@include('../source/common/footer.html')
